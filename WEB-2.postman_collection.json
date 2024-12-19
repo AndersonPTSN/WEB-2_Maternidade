@@ -1,0 +1,469 @@
+{
+	"info": {
+		"_postman_id": "97fea396-7a83-4166-82c0-844f4a1228e2",
+		"name": "WEB-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USUÁRIOS",
+			"item": [
+				{
+					"name": "POST-USUÁRIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCompleto\": \"Pedro\",\r\n    \"dataNascimento\": \"1998-12-30T00:00:00.000+00:00\",\r\n    \"telefone\": \"(84)93232-5576\",\r\n    \"email\": \"pedro@gmail.com\",\r\n    \"cep\": \"20211-295\",\r\n    \"endereco\": \"Rua Emília Guimarães\",\r\n    \"numero\": \"12\",\r\n    \"complemento\": \"Em frente ao poste amarelo\",\r\n    \"bairro\": \"Catumbi\",\r\n    \"cidade\": \"Rio de Janeiro\",\r\n    \"rg\": \"43.620.906-8\",\r\n    \"cpf\": \"089.023.630-58\",\r\n    \"departamento\": \"Médico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-USUÁRIOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-USUÁRIO-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-USUÁRIO-BY-ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PACIENTE",
+			"item": [
+				{
+					"name": "POST-PACIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nomeCompleto\": \"João da Silva\",\r\n  \"dataNascimento\": \"1985-07-20\",\r\n  \"telefone\": \"(11) 98765-4321\",\r\n  \"email\": \"joao.silva@email.com\",\r\n  \"cep\": \"12345-678\",\r\n  \"endereco\": \"Rua das Flores\",\r\n  \"numero\": \"123\",\r\n  \"complemento\": \"Apartamento 301\",\r\n  \"bairro\": \"Jardim das Palmeiras\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"rg\": \"12.345.678-9\",\r\n  \"cpf\": \"123.456.789-00\",\r\n  \"idade\": 39,\r\n  \"cartaoSus\": \"123456789012345\",\r\n  \"nomeAcompanhante\": \"Maria da Silva\",\r\n  \"telefoneAcompanhante\": \"(11) 99876-5432\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PACIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PACIENTE-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pacientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-PACIENTE-BY-ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pacientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRIAGENS",
+			"item": [
+				{
+					"name": "POST-TRIAGEM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": {\r\n        \"id\": 1\r\n    },\r\n    \"sinaisVitais\": \"Pressão normal, febre baixa\",\r\n    \"historicoMedico\": \"Diabetes, alergia a penicilina\",\r\n    \"avaliacaoPaciente\": \"Dor de cabeça e tontura\",\r\n    \"classificacaoRisco\": \"Amarelo\",\r\n    \"avaliacaoEnfermeiro\": \"Monitorar sinais, repouso indicado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/triagem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"triagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-TRIAGENS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/triagem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"triagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-TRIAGEM-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/triagem/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"triagem",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-TRIAGEM-BY-ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/triagem/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"triagem",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRONTUÁRIO",
+			"item": [
+				{
+					"name": "POST-PRONTUÁRIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"unidadeSaude\": \"Hospital São João\",\r\n  \"endereco\": \"Rua das Flores, 123, Centro, São Paulo - SP\",\r\n  \"codigo\": \"HSJ123456\",\r\n  \"municipio\": \"São Paulo\",\r\n  \"dataHoraInternacao\": \"2024-12-19T14:30:00\",\r\n  \"contato\": \"(11) 98765-4321\",\r\n  \"anamnese\": \"Paciente relatou dor no peito, falta de ar e cansaço excessivo nos últimos dias. Histórico familiar de doenças cardíacas.\",\r\n  \"exameGeral\": \"Paciente apresenta-se em estado geral regular, com pressão arterial elevada. Ausência de sinais de infecção.\",\r\n  \"examesLaboratoriais\": \"Hemograma completo: leucócitos dentro da faixa normal, plaquetas e hemácias dentro dos valores de referência. ECG: alterações leves no ritmo cardíaco.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prontuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prontuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PRONTUÁRIO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prontuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prontuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PRONTUÁRIO-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prontuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prontuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-PRONTUÁRIO-BY-ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prontuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prontuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MEDICAÇÃO",
+			"item": [
+				{
+					"name": "POST-MEDICAÇÃO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paciente\": {\r\n        \"id\": 1\r\n    },\r\n  \"medicacao\": \"Dipirona\",\r\n  \"frequencia\": \"A cada 8 horas\",\r\n  \"dataHoraUltimaDose\": \"2024-12-18 14:30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/medicacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-MEDICAÇÃO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-MEDICAÇÃO-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicacoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicacoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-MEDICAÇÃO-BY-ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicacoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicacoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
