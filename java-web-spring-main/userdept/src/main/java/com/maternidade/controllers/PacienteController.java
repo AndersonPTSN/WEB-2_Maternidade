@@ -37,5 +37,10 @@ public class PacienteController {
         }
         return ResponseEntity.notFound().build(); // Retorna 404 Not Found se o ID não existir
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Paciente> atualizarPaciente(@PathVariable Long id, @RequestBody Paciente novoPaciente) {
+        Paciente pacienteAtualizado = pacienteService.atualizar(id, novoPaciente);
+        return ResponseEntity.ok(pacienteAtualizado);
+    }
 }
 

@@ -38,4 +38,9 @@ public class MedicacaoController {
         }
         return ResponseEntity.notFound().build(); // Retorna 404 Not Found se o ID não existir
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Medicacao> atualizarMedicacao(@PathVariable Long id, @RequestBody Medicacao novaMedicacao) {
+        Medicacao medicacaoAtualizada = medicacaoService.atualizar(id, novaMedicacao);
+        return ResponseEntity.ok(medicacaoAtualizada);
+    }
 }

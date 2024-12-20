@@ -32,4 +32,29 @@ public class PacienteService {
         }
         pacienteRepository.deleteById(id);
     }
+    public Paciente atualizar(Long id, Paciente novoPaciente) {
+        // Busca o paciente pelo ID
+        return pacienteRepository.findById(id).map(pacienteExistente -> {
+            // Atualiza os campos do paciente existente com os dados do novo paciente
+            pacienteExistente.setNomeCompleto(novoPaciente.getNomeCompleto());
+            pacienteExistente.setDataNascimento(novoPaciente.getDataNascimento());
+            pacienteExistente.setTelefone(novoPaciente.getTelefone());
+            pacienteExistente.setEmail(novoPaciente.getEmail());
+            pacienteExistente.setCep(novoPaciente.getCep());
+            pacienteExistente.setEndereco(novoPaciente.getEndereco());
+            pacienteExistente.setNumero(novoPaciente.getNumero());
+            pacienteExistente.setComplemento(novoPaciente.getComplemento());
+            pacienteExistente.setBairro(novoPaciente.getBairro());
+            pacienteExistente.setCidade(novoPaciente.getCidade());
+            pacienteExistente.setRg(novoPaciente.getRg());
+            pacienteExistente.setCpf(novoPaciente.getCpf());
+            pacienteExistente.setIdade(novoPaciente.getIdade());
+            pacienteExistente.setCartaoSus(novoPaciente.getCartaoSus());
+            pacienteExistente.setNomeAcompanhante(novoPaciente.getNomeAcompanhante());
+            pacienteExistente.setTelefoneAcompanhante(novoPaciente.getTelefoneAcompanhante());
+
+            // Salva o paciente atualizado
+            return pacienteRepository.save(pacienteExistente);
+        }).orElseThrow(() -> new RuntimeException("Paciente com ID " + id + " não encontrado."));
+    }
 }

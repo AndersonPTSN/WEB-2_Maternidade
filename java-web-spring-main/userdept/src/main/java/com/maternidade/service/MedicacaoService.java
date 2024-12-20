@@ -35,4 +35,17 @@ public class MedicacaoService {
         }
         medicacaoRepository.deleteById(id);
     }
+    public Medicacao atualizar(Long id, Medicacao novaMedicacao) {
+        // Busca a medicação pelo ID
+        return medicacaoRepository.findById(id).map(medicacaoExistente -> {
+            // Atualiza os campos da medicação existente com os dados da nova medicação
+            medicacaoExistente.setMedicacao(novaMedicacao.getMedicacao());
+            medicacaoExistente.setFrequencia(novaMedicacao.getFrequencia());
+            medicacaoExistente.setDataHoraUltimaDose(novaMedicacao.getDataHoraUltimaDose());
+            medicacaoExistente.setPaciente(novaMedicacao.getPaciente());
+
+            // Salva a medicação atualizada
+            return medicacaoRepository.save(medicacaoExistente);
+        }).orElseThrow(() -> new RuntimeException("Medicação com ID " + id + " não encontrada."));
+    }
 }

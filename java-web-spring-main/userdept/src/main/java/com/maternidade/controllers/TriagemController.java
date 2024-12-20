@@ -39,4 +39,15 @@ public class TriagemController {
         }
         return ResponseEntity.notFound().build(); // Retorna 404 Not Found se o ID não existir
     }
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<Triagem> atualizarTriagem(@PathVariable Long id, @RequestBody Triagem triagemAtualizada) {
+        if (!triagemService.existsById(id)) {
+            return ResponseEntity.notFound().build(); // Retorna 404 Not Found se o ID não existir
+        }
+        
+        // Atualiza os dados e retorna a resposta
+        Triagem triagemAtualizadaNoBanco = triagemService.atualizar(id, triagemAtualizada);
+        return ResponseEntity.ok(triagemAtualizadaNoBanco);
+    }
 }

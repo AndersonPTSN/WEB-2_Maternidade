@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.maternidade.model.Usuario;
 import com.maternidade.repository.UsuarioRepository;
+import com.maternidade.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -21,6 +23,9 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioRepository repository;
+	
+    @Autowired
+    private UsuarioService usuarioService;
 	
 	@GetMapping
 	public List<Usuario> listarUsuarios() {
@@ -46,5 +51,9 @@ public class UsuarioController {
 	    return ResponseEntity.notFound().build(); // Retorna 404 Not Found se o ID não existir
 	}
 
-
+    @PutMapping("/{id}")
+    public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario novoUsuario) {
+        Usuario usuarioAtualizado = usuarioService.atualizar(id, novoUsuario);
+        return ResponseEntity.ok(usuarioAtualizado);
+    }
 }

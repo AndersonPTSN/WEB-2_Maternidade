@@ -79,7 +79,7 @@ public class Triagem {
 		return paciente;
 	}
 
-	public void setUsuario(Paciente paciente) {
+	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
 }

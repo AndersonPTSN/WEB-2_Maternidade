@@ -38,4 +38,9 @@ public class ProntuarioController {
         }
         return ResponseEntity.notFound().build(); // Retorna 404 Not Found se o ID não existir
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Prontuario> atualizarProntuario(@PathVariable Long id, @RequestBody Prontuario novoProntuario) {
+        Prontuario prontuarioAtualizado = prontuarioService.atualizar(id, novoProntuario);
+        return ResponseEntity.ok(prontuarioAtualizado);
+    }
 }

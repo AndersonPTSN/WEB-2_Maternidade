@@ -35,4 +35,22 @@ public class ProntuarioService {
         }
         prontuarioRepository.deleteById(id);
     }
+    public Prontuario atualizar(Long id, Prontuario novoProntuario) {
+        // Busca o prontuário pelo ID
+        return prontuarioRepository.findById(id).map(prontuarioExistente -> {
+            // Atualiza os campos do prontuário existente com os dados do novo prontuário
+            prontuarioExistente.setUnidadeSaude(novoProntuario.getUnidadeSaude());
+            prontuarioExistente.setEndereco(novoProntuario.getEndereco());
+            prontuarioExistente.setCodigo(novoProntuario.getCodigo());
+            prontuarioExistente.setMunicipio(novoProntuario.getMunicipio());
+            prontuarioExistente.setDataHoraInternacao(novoProntuario.getDataHoraInternacao());
+            prontuarioExistente.setContato(novoProntuario.getContato());
+            prontuarioExistente.setAnamnese(novoProntuario.getAnamnese());
+            prontuarioExistente.setExameGeral(novoProntuario.getExameGeral());
+            prontuarioExistente.setExamesLaboratoriais(novoProntuario.getExamesLaboratoriais());
+            
+            // Salva o prontuário atualizado
+            return prontuarioRepository.save(prontuarioExistente);
+        }).orElseThrow(() -> new RuntimeException("Prontuário com ID " + id + " não encontrado."));
+    }
 }
