@@ -1,8 +1,10 @@
 {
 	"info": {
-		"_postman_id": "97fea396-7a83-4166-82c0-844f4a1228e2",
+		"_postman_id": "0019d49a-5c05-42e5-a435-539c8fcd59f3",
 		"name": "WEB-2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9102160",
+		"_collection_link": "https://lunar-meadow-271510.postman.co/workspace/Fir~16367607-ff82-4a90-91ea-157a38ed993f/collection/9102160-0019d49a-5c05-42e5-a435-539c8fcd59f3?action=share&source=collection_link&creator=9102160"
 	},
 	"item": [
 		{
@@ -50,6 +52,35 @@
 							"port": "8080",
 							"path": [
 								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE-USUÁRIO-BY-ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCompleto\": \"Maria das Graças\",\r\n    \"dataNascimento\": \"1998-12-30T00:00:00.000+00:00\",\r\n    \"telefone\": \"(84)93232-5576\",\r\n    \"email\": \"maria@gmail.com\",\r\n    \"cep\": \"20211-295\",\r\n    \"endereco\": \"Rua Emília Guimarães\",\r\n    \"numero\": \"12\",\r\n    \"complemento\": \"Em frente ao poste amarelo\",\r\n    \"bairro\": \"Catumbi\",\r\n    \"cidade\": \"Rio de Janeiro\",\r\n    \"rg\": \"43.620.906-8\",\r\n    \"cpf\": \"089.023.630-58\",\r\n    \"departamento\": \"Médico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
 							]
 						}
 					},
@@ -148,6 +179,35 @@
 					"response": []
 				},
 				{
+					"name": "UPDATE-PACIENTE-BY-ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nomeCompleto\": \"Ana da Silva\",\r\n  \"dataNascimento\": \"1985-07-20\",\r\n  \"telefone\": \"(11) 98765-4321\",\r\n  \"email\": \"joao.silva@email.com\",\r\n  \"cep\": \"12345-678\",\r\n  \"endereco\": \"Rua das Flores\",\r\n  \"numero\": \"123\",\r\n  \"complemento\": \"Apartamento 301\",\r\n  \"bairro\": \"Jardim das Palmeiras\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"rg\": \"12.345.678-9\",\r\n  \"cpf\": \"123.456.789-00\",\r\n  \"idade\": 39,\r\n  \"cartaoSus\": \"123456789012345\",\r\n  \"nomeAcompanhante\": \"Maria da Silva\",\r\n  \"telefoneAcompanhante\": \"(11) 99876-5432\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pacientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET-PACIENTE-BY-ID",
 					"request": {
 						"method": "GET",
@@ -234,6 +294,35 @@
 							"port": "8080",
 							"path": [
 								"triagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE-TRIAGEM-BY-ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": {\r\n        \"id\": 1\r\n    },\r\n    \"sinaisVitais\": \"Pressão alta\",\r\n    \"historicoMedico\": \"Diabetes, alergia a penicilina\",\r\n    \"avaliacaoPaciente\": \"Dor de cabeça e suor\",\r\n    \"classificacaoRisco\": \"vermelho\",\r\n    \"avaliacaoEnfermeiro\": \"Monitorar sinais, repouso indicado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/triagem/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"triagem",
+								"1"
 							]
 						}
 					},
@@ -332,6 +421,35 @@
 					"response": []
 				},
 				{
+					"name": "UPDATE-PRONTUÁRIO-BY-ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"unidadeSaude\": \"Hospital Maria das Graças\",\r\n  \"endereco\": \"Rua das Pedras, 43, Centro, São Paulo - SP\",\r\n  \"codigo\": \"DFS5564BFGD\",\r\n  \"municipio\": \"São Paulo\",\r\n  \"dataHoraInternacao\": \"2024-10-19T14:30:00\",\r\n  \"contato\": \"(11) 95435-4551\",\r\n  \"anamnese\": \"Paciente relatou dor no peito, falta de ar e cansaço excessivo nos últimos dias. Histórico familiar de doenças cardíacas.\",\r\n  \"exameGeral\": \"Paciente apresenta-se em estado geral regular, com pressão arterial elevada. Ausência de sinais de infecção.\",\r\n  \"examesLaboratoriais\": \"Hemograma completo: leucócitos dentro da faixa normal, plaquetas e hemácias dentro dos valores de referência. ECG: alterações leves no ritmo cardíaco.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/prontuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prontuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET-PRONTUÁRIO-BY-ID",
 					"request": {
 						"method": "GET",
@@ -418,6 +536,35 @@
 							"port": "8080",
 							"path": [
 								"medicacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE-MEDICAÇÃO-BY-ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paciente\": {\r\n        \"id\": 1\r\n    },\r\n  \"medicacao\": \"Paracetamol\",\r\n  \"frequencia\": \"A cada 12 horas\",\r\n  \"dataHoraUltimaDose\": \"2024-12-18 14:30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/medicacoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicacoes",
+								"1"
 							]
 						}
 					},
